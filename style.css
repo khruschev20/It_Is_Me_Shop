@@ -181,21 +181,21 @@ html {
 
 
 footer h2{
-    background-color: black;
-    color: white;
-    text-align: center;
+    background-color: black !important;
+    color: white !important;
+    text-align: center !important;
 }
 
 footer p{
-    background-color: black;
-    color: white;
-    padding: 0 5px 5px 15px;
+    background-color: black !important;
+    color: white !important;
+    padding: 0 5px 5px 15px !important;
 
 }
 
 footer b{
-    background-color: black;
-    color: white;
+    background-color: black !important;
+    color: white !important;
     
 }
 
