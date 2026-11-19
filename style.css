@@ -1,7 +1,7 @@
 *{
     background-color: #38B6FF;
     color: white;
-    margin: 0;
+    margin: 0
     padding: 0;
 }
 
@@ -103,6 +103,10 @@ html {
 .nav-link:hover::after,
 .nav-link.active::after {
     width: calc(100% - 32px);
+}
+
+p{
+font-size:16px;
 }
 
 /* Smooth page scrolling */
