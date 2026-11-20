@@ -1,103 +1,146 @@
-*{
-    background-color: #38B6FF;
-    color: white;
-    margin: 0
+
+/* =========================================
+   1. GLOBAL SETTINGS
+========================================= */
+
+* {
+    margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-
-/* Smooth scrolling */
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 70px;
+    scroll-padding-top: 90px;
 }
 
-.brand-icon{
-    display: inline-block;
-    vertical-align: middle;
-    background-image: url('WhatsApp%20Image%202026-10-13%20at%2018.00.28.jpeg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  height: 100px; 
-  width: 100px;
-  opacity: 0.8;
-  border-radius: 30%;
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #38B6FF;
+    color: #ffffff;
+    line-height: 1.7;
+    min-height: 100vh;
 }
-/* Navbar container */
+
+a {
+    color: inherit;
+}
+
+
+/* =========================================
+   2. HEADER AND NAVIGATION
+========================================= */
+
 .site-header {
     position: sticky;
     top: 0;
     z-index: 1000;
-    background-color: black;
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: #000000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
 }
 
-/* Navbar layout */
 .navbar {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 18px 30px;
+    padding: 12px 30px;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 30px;
-    background-color: black;
+    gap: 25px;
+
+    background-color: #000000;
 }
 
-/* Website logo/name */
+
+/* Brand logo and name */
+
 .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
     color: #ffffff;
     font-size: 22px;
     font-weight: 700;
-    text-decoration: none;
     letter-spacing: 1px;
+    text-decoration: none;
     white-space: nowrap;
-    background-color: black
+    background-color: transparent;
 }
 
 .brand span {
-    color: #0ea5e9;
-    margin-left: 5px;
-    background-color: black;
+    color: #38B6FF;
+    background-color: transparent;
 }
 
+
+/* Brand image */
+
+.brand-icon {
+    display: inline-block;
+    flex-shrink: 0;
+
+    width: 48px;
+    height: 48px;
+
+    background-image: url("WhatsApp%20Image%202026-10-13%20at%2018.00.28.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    border-radius: 50%;
+    opacity: 0.95;
+}
+
+
 /* Navigation links */
+
 .nav-links {
     display: flex;
     align-items: center;
     gap: 12px;
-    background-color: black;
+
+    background-color: transparent;
 }
 
 .nav-link {
     position: relative;
+
     padding: 10px 16px;
+
     color: #cbd5e1;
-    text-decoration: none;
     font-size: 15px;
     font-weight: 500;
+    text-decoration: none;
+
+    background-color: transparent;
+
     transition: color 0.3s ease;
-    background-color: black
 }
 
-/* Animated underline */
+
+/* Navigation underline animation */
+
 .nav-link::after {
     content: "";
+
     position: absolute;
     bottom: 2px;
     left: 16px;
+
     width: 0;
     height: 2px;
-    background: #0ea5e9;
+
+    background-color: #38B6FF;
+
     transition: width 0.3s ease;
 }
 
 .nav-link:hover,
 .nav-link.active {
-    color: #38bdf8;
+    color: #38B6FF;
 }
 
 .nav-link:hover::after,
@@ -106,69 +149,135 @@ html {
 }
 
 
-/* Smooth page scrolling */
-html {
-    scroll-behavior: smooth;
-    scroll-padding-top: 85px;
-}
+/* Keyboard accessibility */
 
-/* Mobile responsiveness */
-@media (max-width: 600px) {
-    .navbar {
-        flex-direction: column;
-        gap: 12px;
-        padding: 14px 10px;
-    }
-
-    .brand {
-        font-size: 20px;
-        background-color: black
-    }
-
-    .nav-links {
-        width: 100%;
-        justify-content: center;
-        gap: 2px;
-    }
-
-    .nav-link {
-        padding: 10px 9px;
-        font-size: 13px;
-    }
-
-    .nav-link::after {
-        left: 9px;
-    }
-
-    .nav-link:hover::after,
-    .nav-link.active::after {
-        width: calc(100% - 18px);
-    }
+.nav-link:focus-visible,
+.brand:focus-visible,
+footer a:focus-visible {
+    outline: 2px solid #38B6FF;
+    outline-offset: 4px;
 }
 
 
+/* =========================================
+   3. MAIN CONTENT
+========================================= */
+
+main {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px;
+}
+
+main > section {
+    margin-bottom: 45px;
+    padding: 30px;
+
+    background-color: rgba(0, 0, 0, 0.12);
+    border-radius: 12px;
+}
+
+
+/* Main headings */
+
+h1,
+h2,
+h3 {
+    color: #ffffff;
+    line-height: 1.3;
+}
+
+h1 {
+    margin-bottom: 15px;
+    font-size: 42px;
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-size: 30px;
+}
+
+h3 {
+    margin-top: 30px;
+    margin-bottom: 12px;
+    font-size: 22px;
+}
+
+
+/* Paragraphs */
+
+main p {
+    margin-bottom: 18px;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+
+/* Home section */
+
+#home {
+    padding: 55px 30px;
+    text-align: center;
+}
+
+#home p {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 18px;
+}
+
+
+/* About section */
+
+#about {
+    text-align: left;
+}
+
+
+/* =========================================
+   4. PRODUCT SLIDESHOW
+========================================= */
 
 .slideshow-container,
 .w3-section {
     position: relative;
+
     width: 100%;
-    max-width: 500px;
+    max-width: 550px;
     aspect-ratio: 4 / 3;
-    margin: 30px auto; /* Centres the slideshow */
+
+    margin: 30px auto;
     overflow: hidden;
+
+    background-color: #111111;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
 }
+
+
+/* Individual slideshow images */
 
 .mySlides {
     position: absolute;
     inset: 0;
+
     width: 100%;
     height: 100%;
+
     object-fit: cover;
+
     opacity: 0;
-    transition: opacity 1.5s ease-in-out;
     pointer-events: none;
-    border-radius: 10px; /* Optional: adds rounded corners to the images */
+
+    border-radius: 12px;
+
+    transition: opacity 1s ease-in-out;
 }
+
+
+/* Currently active image */
 
 .mySlides.active {
     opacity: 1;
@@ -176,28 +285,202 @@ html {
 }
 
 
+/* =========================================
+   5. FOOTER AND CONTACT INFORMATION
+========================================= */
 
-footer h2{
-   /* background-color: black !important;*/
-    color: white !important;
-    text-align: center !important;
-}
+footer {
+    width: 100%;
+    padding: 35px 20px 20px;
 
-footer p{
-    /* background-color: black !important;*/
-    color: white !important;
-    padding: 0 5px 5px 15px !important;
-
-}
-
-footer b{
-    /* background-color: black !important;*/
-    color: white !important;
-    
-}
-
-.contact-info{
-    /*background-color: black;*/
-    color: white;
+    color: #ffffff;
     text-align: center;
+
+    /*background-color: #000000;*/
+    border-top: 3px solid #38B6FF;
+}
+
+footer #contact {
+    max-width: 700px;
+    margin: 0 auto 25px;
+    background-color: transparent;
+}
+
+footer h2 {
+    margin-bottom: 15px;
+    /*color: #38B6FF;*/
+    color: #ffffff;
+    text-align: center;
+    background-color: transparent;
+}
+
+footer p {
+    margin-bottom: 10px;
+    padding: 0;
+    color: #ffffff;
+    background-color: transparent;
+}
+
+footer strong {
+    /*color: #38B6FF;*/
+    color: #ffffff;
+    background-color: transparent;
+}
+
+footer a {
+    color: #ffffff;
+    text-decoration: none;
+    background-color: transparent;
+
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #38B6FF;
+}
+
+.contact-info {
+    color: #ffffff;
+    text-align: center;
+    background-color: transparent;
+}
+
+
+/* =========================================
+   6. TABLET RESPONSIVENESS
+========================================= */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        padding: 12px 20px;
+        gap: 15px;
+    }
+
+    .brand {
+        font-size: 19px;
+    }
+
+    .nav-links {
+        gap: 5px;
+    }
+
+    .nav-link {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    main {
+        padding: 20px;
+    }
+
+    main > section {
+        padding: 25px;
+    }
+
+    h1 {
+        font-size: 34px;
+    }
+
+    h2 {
+        font-size: 26px;
+    }
+
+}
+
+
+/* =========================================
+   7. MOBILE RESPONSIVENESS
+========================================= */
+
+@media (max-width: 600px) {
+
+    .navbar {
+        flex-direction: column;
+        padding: 12px 10px;
+        gap: 10px;
+    }
+
+    .brand {
+        font-size: 19px;
+    }
+
+    .brand-icon {
+        width: 42px;
+        height: 42px;
+    }
+
+    .nav-links {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 2px;
+    }
+
+    .nav-link {
+        padding: 9px 10px;
+        font-size: 13px;
+    }
+
+    .nav-link::after {
+        left: 10px;
+    }
+
+    .nav-link:hover::after,
+    .nav-link.active::after {
+        width: calc(100% - 20px);
+    }
+
+    main {
+        padding: 15px;
+    }
+
+    main > section {
+        padding: 20px 15px;
+        margin-bottom: 25px;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    h2 {
+        font-size: 25px;
+    }
+
+    h3 {
+        font-size: 20px;
+    }
+
+    main p {
+        font-size: 15px;
+    }
+
+    .slideshow-container,
+    .w3-section {
+        margin: 20px auto;
+        border-radius: 8px;
+    }
+
+}
+
+
+/* =========================================
+   8. ACCESSIBILITY: REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+
 }
